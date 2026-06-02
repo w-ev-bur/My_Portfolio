@@ -91,7 +91,7 @@ body {
 
 @keyframes move {
     to {
-        transform: translateX(calc(-100% + 100vw));
+        transform: translateX(-100vw);
     }
 }
 
@@ -116,10 +116,9 @@ body {
 
 .pin-wrap {
     height: 100vh;
-    width: 250vmax;
+    width: max-content;
     display: flex;
     align-items: center;
-    gap: 100px;
     will-change: transform;
     animation: linear move forwards;
     animation-timeline: --section-pin-tl;
@@ -127,38 +126,41 @@ body {
 }
 
 .hero-block {
-    min-width: 190vw;
+    width: 200vw;
+    height: 100vh;
+    flex-shrink: 0;
 }
 
 .hero {
-    width: 100vw;
+    width: 200vw;
     height: 100vh;
-    text-align: center;
     position: relative;
-    text-transform: uppercase;
-    letter-spacing: 17.5px;
+    overflow: hidden;
 }
 
 .hero-one {
     position: absolute;
-    width: 98.5%;
+    left: 0;
+    top: 0;
+    width: 120vw;
     height: 100vh;
     background-image: url("Assets for Project/Moon Scape-IMG.png");
-    clip-path: polygon(0 0, 98.5vw 0, 85vw 100vh, 0 100vh);
     background-size: cover;
     background-position: center;
+    clip-path: polygon(0 0, 100vw 0, 85vw 100vh, 0 100vh);
     z-index: 1;
 }
 
 .hero-two {
     position: absolute;
     top: 0;
-    left: 80%;
-    width: 120%;
+    left: 85vw;
+    width: 115vw;
     height: 100vh;
     background-image: url("Assets for Project/FireGuyImg Glow.png");
     background-size: cover;
     background-position: center;
+    z-index: 0;
 }
 
 .header-title {
