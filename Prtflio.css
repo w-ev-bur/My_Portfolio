@@ -96,99 +96,76 @@ body {
 }
 
 #sectionPin {
-    height: 500vh;
-    width: 100%;
-    overflow: visible;
-    view-timeline-name: --section-pin-tl;
-    view-timeline-axis: block;
+    height: 300vh;
     background: #f47c6b;
 }
 
 .pin-wrap-sticky {
-    height: 100vh;
-    width: 100%;
     position: sticky;
     top: 0;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-}
-
-.pin-wrap {
     height: 100vh;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    will-change: transform;
-    animation: linear move forwards;
-    animation-timeline: --section-pin-tl;
-    animation-range: contain 0% contain 100%;
-}
-
-.hero-block {
-    width: 200vw;
-    height: 100vh;
-    flex-shrink: 0;
-}
-
-.hero {
-    width: 200vw;
-    height: 100vh;
-    position: relative;
     overflow: hidden;
 }
 
-.hero-one {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 120vw;
+.pin-wrap {
+    display: flex;
+    width: 200vw;
     height: 100vh;
-    background-image: url("Assets for Project/Moon Scape-IMG.png");
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(0 0, 100vw 0, 85vw 100vh, 0 100vh);
-    z-index: 1;
+
+    animation: horizontal-scroll linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
 }
 
-.hero-two {
-    position: absolute;
-    top: 0;
-    left: 85vw;
-    width: 115vw;
+.hero-panel {
+    width: 100vw;
     height: 100vh;
-    background-image: url("Assets for Project/FireGuyImg Glow.png");
+    flex: 0 0 100vw;
+    position: relative;
     background-size: cover;
     background-position: center;
-    z-index: 0;
+}
+
+.hero-moon {
+    background-image: url("Assets for Project/Moon Scape-IMG.png");
+}
+
+.hero-fire {
+    background-image: url("Assets for Project/FireGuyImg Glow.png");
 }
 
 .header-title {
-    z-index: 2;
     position: absolute;
-    top: 50%;
+    z-index: 5;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: "davis", sans-serif;
-	color: #EBEBEB;
-	text-shadow: 6px 8px 20px rgba(0,0,0,0.8);
+    text-align: center;
+    color: #EBEBEB;
+    text-shadow: 6px 8px 20px rgba(0,0,0,0.8);
+    letter-spacing: 17.5px;
 }
 
 .header-primary {
-	font-family: "arboria", sans-serif;
+    font-family: "arboria", sans-serif;
     font-size: 92.5px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .header-sub {
-	font-size: 60px;
-	font-style: oblique;
+    font-size: 60px;
+    font-style: oblique;
     font-weight: 700;
 }
 
 .header-raquo {
-	font-size: 45px;
-	font-weight: 600;
+    font-size: 45px;
+}
+
+@keyframes horizontal-scroll {
+    to {
+        transform: translateX(-100vw);
+    }
 }
 
 .gallery {
